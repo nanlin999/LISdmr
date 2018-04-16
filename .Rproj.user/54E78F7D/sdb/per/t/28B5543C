@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Predict DMC by the LIS-based multiple testing procedure, where LIS values are predicted from the trained CRF model.\n#'\n#' @param dt Data matrix resulted from load_data(), containing CRF features.\n#' @param alpha Nominal FDR level.\n#'\n#' @return Data matrix containing raw MeDIP-seq, MRE-seq read counts and predicted DMC label.\n#'\n#' @export\nget_DMC <- function(dt, alpha = 0.01) {\n  if(!file.exists('/tmp/LISdmr/model')){\n    warning('CRF model is not trained.')\n  }\n\n  write.table(dt[,8:33], '/tmp/LISdmr/test_dt', quote = F, sep = \"\\t\", col.names = F, row.names = F)\n\n  package_dir = system.file(package = \"LISdmr\")\n\n  commend = paste(package_dir, '/src/crfpp/crf_test -v2 -m /tmp/LISdmr/model /tmp/LISdmr/test_dt > /tmp/LISdmr/prediction', sep = '')\n\n  system(commend)\n\n  result = read.table('/tmp/LISdmr/prediction')\n\n  prob0 = result[,ncol(result)-1]\n  prob0 = as.character(prob0)\n  prob0 = as.numeric(substr(prob0,3,10))\n\n  DMC = lis_rejection(prob0, alpha)\n\n  res = dt[,1:7]\n  res[,'DMC'] = DMC\n  return(res)\n}\n",
+    "created" : 1523891941666.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2766898227",
+    "id" : "28B5543C",
+    "lastKnownWriteTime" : 1523912905,
+    "last_content_update" : 1523912905712,
+    "path" : "~/Documents/Paper3/Rcode/Rpackage/LISdmr/R/get_DMC.R",
+    "project_path" : "R/get_DMC.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

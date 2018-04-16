@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "lis_rejection <- function(lis, alpha = 0.01) {\n\n  m=length(lis)\n  sort_lis<-sort(lis)\n  if (min(alpha) > alpha)\n  {\n    res = rep(0, m)\n  }\n  else\n  {\n    k = 1\n    while(k<m && (1/k)*sum(sort_lis[1:k]) < alpha){\n      k = k + 1\n    }\n    threshold = sort_lis[k - 1]\n    rej_id = which(lis < threshold)\n    res = rep(0, m)\n    res[rej_id] = 1\n  }\n  return (res)\n}\n",
+    "created" : 1523894726066.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2107657086",
+    "id" : "BBA21892",
+    "lastKnownWriteTime" : 1523895024,
+    "last_content_update" : 1523895024208,
+    "path" : "~/Documents/Paper3/Rcode/Rpackage/LISdmr/R/lis_rejeciton.R",
+    "project_path" : "R/lis_rejeciton.R",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
