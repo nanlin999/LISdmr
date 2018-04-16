@@ -25,7 +25,7 @@ get_DMR <- function(dt, minlen = 100, pct.sig = 0.7, minCG = 10) {
   tmp_all[,'fdr'] = 0
   colnames(tmp_all)[2] = 'pos'
 
-  DMR = callDMR(tmp_all, delta=0, p.threshold=0.01, minlen, pct.sig, minCG)
+  DMR = DSS::callDMR(tmp_all, delta=0, p.threshold=0.01, minlen, pct.sig, minCG)
 
   return(DMR[,1:5])
 }
