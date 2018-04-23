@@ -76,7 +76,7 @@ res_DMR = get_DMR(res_DMC)
 * [DSS](https://bioconductor.org/packages/release/bioc/html/DSS.html) - For merging detected DMCs into DMRs.
 * [crfpp](https://taku910.github.io/crfpp/) - For running CRF in modeling LIS values.
 
-## Author
+## Authors
 
 * **Nan Lin** - nlin@wustl.edu - Washington University in St. Louis
 * **Xiaoyu Dai** - xiaoyu.dai@go.wustl.edu - Washington University in St. Louis
