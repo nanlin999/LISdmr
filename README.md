@@ -78,6 +78,7 @@ res_DMR = get_DMR(res_DMC)
 
 ## Author
 
+* **Nan Lin** - nlin@wustl.edu - Washington University in St. Louis
 * **Xiaoyu Dai** - xiaoyu.dai@go.wustl.edu - Washington University in St. Louis
 
  
