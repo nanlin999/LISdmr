@@ -16,17 +16,17 @@ install.packages("devtools")
 library(devtools)
 ```
 
-3. Install the [LISdmr](https://github.com/xiaoyudai/LISdmr) package from github.
+3. Install the [LISdmr](https://github.com/nanlin999/LISdmr) package from github.
 
 ```
-install_github("xiaoyudai/LISdmr")
+install_github("nanlin999/LISdmr")
 ```
 
 ## Example use
 
-An example to detect DMR between Brain cell and H1ES cell, based on the first 1000 CpGs at Chromesome 18. The example data is stored at [/extdata](https://github.com/xiaoyudai/LISdmr/tree/master/inst/extdata).
+An example to detect DMR between Brain cell and H1ES cell, based on the first 1000 CpGs at Chromesome 18. The example data is stored at [/extdata](https://github.com/nanlin999/LISdmr/tree/master/inst/extdata).
 
-1. Load the [LISdmr](https://github.com/xiaoyudai/LISdmr) package.
+1. Load the [LISdmr](https://github.com/nanlin999/LISdmr) package.
 
 ```
 library(LISdmr)
